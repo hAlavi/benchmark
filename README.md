@@ -20,11 +20,13 @@ List of tools should be installed:
 > **Note:** you can change the settings of MySQL Connection instance inside Application.Java for Java code and config.js for NodeJS
 2. NodeJS and npm/yarn
 > **http://blog.teamtreehouse.com/install-node-js-npm-windows**
-3. MySQL workbench (optional)
+3. PM2 for multi-threading 
+> **npm install pm2 -g**
+4. MySQL workbench (optional)
 
 ## Execution
 - **NodeJS**
-> node index.js 
+> pm2 start index.js 
 - **Java**
 > start the service.
 
