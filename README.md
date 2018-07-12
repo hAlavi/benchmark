@@ -13,5 +13,20 @@ Five different API endpoints:
 |Complex REST      |   localhost:8080/users        |   localhost:3000/users      |
 |Tweak Complex Calc|   localhost:8080/primeint     |   localhost:3000/primeint   |
 
+
+### Installation
+List of tools should be installed:
+1. MySQL  
+> **Note:** you can change the settings of MySQL Connection instance inside Application.Java for Java code and config.js for NodeJS
+2. NodeJS and npm/yarn
+> **http://blog.teamtreehouse.com/install-node-js-npm-windows**
+3. MySQL workbench (optional)
+
+## Execution
+- **NodeJS**
+> node index.js 
+- **Java**
+> start the service.
+
 ### Results
 https://imgur.com/a/i18hyeN
