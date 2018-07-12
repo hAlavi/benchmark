@@ -1,0 +1,25 @@
+{
+  "name": "benchmark_node_java",
+  "version": "1.0.0",
+  "description": "Web REST API Benchmark, NodeJS vs Java",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hAlavi/benchmark.git"
+  },
+  "author": "Rouh Alavi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hAlavi/benchmark/issues"
+  },
+  "homepage": "https://github.com/hAlavi/benchmark#readme",
+  "dependencies": {
+    "bookshelf": "^0.13.3",
+    "express": "^4.16.3",
+    "knex": "^0.15.0",
+    "mysql": "^2.15.0"
+  }
+}
