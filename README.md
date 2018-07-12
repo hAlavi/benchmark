@@ -14,4 +14,4 @@ Five different API endpoints:
 |Tweak Complex Calc|   localhost:8080/primeint     |   localhost:3000/primeint   |
 
 ### Results
-![Benchmarking Results](https://imgur.com/a/i18hyeN)
+https://imgur.com/a/i18hyeN
