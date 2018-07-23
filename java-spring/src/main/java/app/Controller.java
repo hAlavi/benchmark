@@ -17,9 +17,9 @@ import model.User;
 @RestController
 public class Controller {
 	
-	final private SessionFactory sessionFactory;
+    final private SessionFactory sessionFactory;
 	
-	public Controller(SessionFactory sessionFactory) {
+    public Controller(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -85,7 +85,49 @@ public class Controller {
         Long i = countPrimes(10000000);
         return new JSONObject().put("status", "done").put("result", i.toString()).toString();
     }
+
+    public boolean isPrimeInt(int n) {
+        boolean result = true;
     
+        if (n <= 1) {
+            result = false;
+        }
+        else {
+            // We only need to check up to the sqrt of the number.
+            for (int i=2; i*i<=n; i++) {
+                if (n % i == 0) {
+                // This number is evenly divisible by i, so it is not prime.
+                result = false;
+                break;
+                }
+            }
+        }
+    
+        return result;
+    }
+
+    /**
+    * @param {number} n
+    * @return {number}
+    */
+    public int countPrimesInt(int n) {
+        int result = 0;
+    
+        for (int i=0; i<n; i++) {
+            if (isPrime(i)) {
+                result++;
+            }
+        }
+    
+        return result;
+    }
+    
+    @RequestMapping(value = "/primeint", produces = "application/json")
+    public String primeInt() throws JSONException {
+        Integer i = countPrimesInt(10000000);
+        return new JSONObject().put("status", "done").put("result", i.toString()).toString();
+    }
+     
     @RequestMapping(value = "/countries", produces = "application/json")
     @Transactional
     public List<Country> countries() throws JSONException {

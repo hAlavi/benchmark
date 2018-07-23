@@ -41,7 +41,44 @@ class Controller
 		}
 		
 		return result;
-	};
+	}
+
+	static isPrimeInt(n) {
+		var result = true;
+		let tUint = new Uint32Array(1);
+		tUint[0] = n;
+		if (tUint[0] <= 1) {
+			result = false;
+		}
+		else {
+			// We only need to check up to the sqrt of the number.
+			for (var i=2; i*i<=tUint[0]; i++) {
+				if (tUint[0] % i === 0) {
+					// This number is evenly divisible by i, so it is not prime.
+					result = false;
+					break;
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * @param {number} n
+	 * @return {number}
+	 */
+	static countPrimesInt(n) {
+		let result = new Uint32Array(1);
+		
+		for (var i=0; i<n; i++) {
+			if (Controller.isPrimeInt(i)) {
+				result[0]++;
+			}
+		}
+		
+		return result[0];
+	}
 
 	compute(req, res) {
 		let x = 0, y = 1;
@@ -59,6 +96,12 @@ class Controller
 
 	prime(req, res) {
 		var i = Controller.countPrimes(10000000);
+
+		return res.json({ status: 'done' , result:i})
+	}
+
+	primeInt(req, res) {
+		var i = Controller.countPrimesInt(10000000);
 
 		return res.json({ status: 'done' , result:i})
 	}
